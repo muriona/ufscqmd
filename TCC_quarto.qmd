@@ -1,0 +1,88 @@
+---
+author: 'FULANO DE TAL'
+local: Florianópolis
+date_year: "`r lubridate::year(Sys.time())`"
+date_month: 'Março'
+date_day: '31'
+institution: 'Universidade Federal de Santa Catarina'
+inst_short: 'UFSC'
+division: 'CTC - CENTRO TECNOLÓGICO'
+coordinator: Beltrano da Silva
+advisor: Mauricio Uriona Maldonado
+# If you have more two advisors, un-silence line 7
+#altadvisor: 'Your Other Advisor'
+examiner:
+- title: Prof.
+  name: Examinador 1
+  degree: Dr.
+  institution: Universidade Federal de Santa Catarina
+  inst_short: UFSC
+- title: Prof.
+  name: Examinador 2
+  degree: Dr.
+  institution: Fédération Internationale des Géomètres
+  inst_short: FIG
+department: |
+  Departamento de Engenharia de Produção e Sistemas
+degree: 'Graduado em Engenharia de Produção Mecânica/Elétrica/Civil'
+level: 'graduação'
+doc_type: 'Trabalho de Conclusão de Curso'
+title: 'TÍTULO'
+subtitle: 'SUBTÍTULO'
+#knit: "bookdown::render_book"
+#site: bookdown::bookdown_site
+#output: 
+#  ufscdown::thesis_pdf: 
+#    citation_package: biblatex
+#    bib_engine: biber
+#  ufscdown::thesis_gitbook: default
+#  ufscdown::thesis_word: default
+#  ufscdown::thesis_epub: default
+# If you are creating a PDF you'll need to write your preliminary content (e.g., 
+# abstract, acknowledgements) here or use code similar to line 43-44 for the 
+# .RMD files. If you are NOT producing a PDF, you can delete or silence lines 
+# 42-59 in this YAML header.
+abstract: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), 
+  collapse = '\n  ')`
+palavras-chave: [Palavra-chave 1, Palavra-chave 2]
+foreignabstract: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-foreignabstract.Rmd"), 
+  collapse = '\n  ')`
+# If you'd rather include the preliminary content in files instead of inline
+# like below, use a command like that for the abstract above.  Note that a tab 
+# is needed on the line after the `|`.
+keyword: [Keyword 1, Keyword 2]
+epigrafe: |
+  | "Eppur si muove!"  
+  | (Galileu Galilei, 1633)
+# Specify the location of the bibliography below
+bibliography: bib/references.bib
+csl: csl/ufsc.csl
+link-citations: yes
+dedication: |
+  Este trabalho é dedicado aos meus colegas de classe e aos meus queridos pais.
+thanks: |
+  | Gostaria de agradecer sinceramente a todos os que colaboraram à execução 
+  | deste trabalho.
+  | Aos colegas da UFSC.
+  | Aos professores do PPGTG.
+  | Em especial ao meu orientador, pela paciência.
+  | E a minha querida esposa pela compreensão.
+format: 
+  pdf:
+    template: template.tex
+    cite-method: biblatex
+number-sections: true
+editor: visual
+---
+
+
+
+{{< include _01-chap1.qmd >}}
+
+
+{{< include _02-chap2.qmd >}}
+
+
+{{< include _references.qmd >}}
